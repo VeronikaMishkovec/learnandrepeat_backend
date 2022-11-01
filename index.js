@@ -14,10 +14,6 @@ const PORT = process.env.PORT || 5001;
 
 app.use(express.json());
 
-app.use("/sets", setsRouter);
-app.use("/auth", AuthRouter);
-app.use("/word", WordRouter);
-
 app.get('/', function (req, res) {
   res.status(200).join(
       {
@@ -25,6 +21,12 @@ app.get('/', function (req, res) {
       }
   )
 })
+
+app.use("/sets", setsRouter);
+app.use("/auth", AuthRouter);
+app.use("/word", WordRouter);
+
+
 
 app.use(ErrorMiddleware);
 
