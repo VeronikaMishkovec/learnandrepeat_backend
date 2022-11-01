@@ -1,1 +1,1 @@
-web: npm run start
+git subtree push --prefix MainBackendFolder heroku master
