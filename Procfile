@@ -1,1 +1,1 @@
-git subtree push --prefix MainBackendFolder heroku master
+git subtree push --prefix . heroku master
