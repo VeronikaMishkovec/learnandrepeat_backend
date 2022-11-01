@@ -18,6 +18,14 @@ app.use("/sets", setsRouter);
 app.use("/auth", AuthRouter);
 app.use("/word", WordRouter);
 
+app.get('/', function (req, res) {
+  res.status(200).join(
+      {
+        message: 'Hello'
+      }
+  )
+})
+
 app.use(ErrorMiddleware);
 
 const start = async () => {

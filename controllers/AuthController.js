@@ -48,11 +48,7 @@ class AuthController {
     const { token } = req.body;
     try {
       const refreshToken = await AuthService.refresh(token);
-      res.status(200).join(
-          {
-            message: 'Hello'
-          }
-      )
+
       return res.json(refreshToken);
     } catch (e) {
       next(e);
