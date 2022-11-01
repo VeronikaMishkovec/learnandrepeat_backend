@@ -1,1 +1,1 @@
-git subtree push --prefix . heroku master
+web: npm install && node index.js
