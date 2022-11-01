@@ -43,7 +43,7 @@ class AuthController {
     const { token } = req.body;
     try {
       const refreshToken = await AuthService.refresh(token);
-      res.json(refreshToken);
+      return res.json(refreshToken);
     } catch (e) {
       next(e);
     }
