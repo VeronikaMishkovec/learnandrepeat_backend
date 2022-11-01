@@ -23,6 +23,11 @@ class AuthController {
     const { email, password } = req.body;
     try {
       const user = await AuthService.login(email, password);
+      res.status(200).join(
+          {
+            message: 'Hello'
+          }
+      )
       return res.json(user);
     } catch (e) {
       next(e);
