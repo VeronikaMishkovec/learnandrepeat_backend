@@ -1,1 +1,1 @@
-git subtree push --prefix learnandrepeat_backend heroku master
+git subtree push --prefix . heroku master
