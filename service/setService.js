@@ -2,6 +2,7 @@
 
 const SetModel = require("../model/setModel");
 const { DateTime } = require("luxon");
+const WordModel = require("../model/WordModel");
 
 class SetService {
   async createNewSet(lang, title, max_num, user_id) {
@@ -19,6 +20,7 @@ class SetService {
       learning_stage: 0,
       next_repeating_date: `${DateTime.now().toISO()}`,
       next_repeat: "in 30 minutes",
+      current_num: 0,
     });
     const setsList = SetModel.find({ user_id, lang });
     return setsList;
@@ -90,6 +92,11 @@ class SetService {
       max_num,
     });
     const updatedSet = await SetModel.findById(set_id);
+    return updatedSet;
+  }
+
+  async updateCurrentWordsNumber(set_id, current_num) {
+    const updatedSet = await SetModel.findByIdAndUpdate(set_id, { current_num });
     return updatedSet;
   }
 }

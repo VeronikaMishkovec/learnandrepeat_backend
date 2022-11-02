@@ -10,6 +10,7 @@ const SetSchema = new Schema({
   learning_stage: { type: Number },
   next_repeating_date: { type: String },
   next_repeat: { type: String },
+  current_num: { type: Number }
 });
 
 module.exports = model("Set", SetSchema);

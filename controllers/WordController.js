@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const WordService = require("../service/WordService");
+const SetService = require("../service/setService");
 
 class WordController {
   async createNewWord(req, res, next) {
@@ -11,7 +12,7 @@ class WordController {
         translation,
         set_id
       );
-
+      await SetService.updateCurrentWordsNumber(set_id, newWord.length)
       return res.json(newWord);
     } catch (e) {
       next(e);
