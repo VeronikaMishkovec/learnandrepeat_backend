@@ -21,6 +21,7 @@ class SetService {
       next_repeating_date: `${DateTime.now().toISO()}`,
       next_repeat: "in 30 minutes",
       current_num: 0,
+      set_status: 'Inactive'
     });
     const setsList = SetModel.find({ user_id, lang });
     return setsList;
