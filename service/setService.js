@@ -51,6 +51,7 @@ class SetService {
         break;
       case 1:
         next_repeating_date = DateTime.now().plus({ hours: 8 }).toISO();
+        set_status = 'in 8 hours';
         break;
       case 2:
         next_repeating_date = DateTime.now().plus({ hours: 24 }).toISO();
