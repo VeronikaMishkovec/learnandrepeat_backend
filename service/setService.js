@@ -59,6 +59,7 @@ class SetService {
         break;
       case 3:
         next_repeating_date = DateTime.now().plus({ days: 3 }).toISO();
+        set_status = 'in 3 days';
         break;
       case 4:
         next_repeating_date = DateTime.now().plus({ days: 10 }).toISO();
