@@ -47,32 +47,25 @@ class SetService {
     switch (current_learning_stage.learning_stage) {
       case 0:
         next_repeating_date = DateTime.now().plus({ minutes: 30 }).toISO();
-        next_repeat = 'in 8 hours';
         set_status = 'in 30 minutes';
         break;
       case 1:
         next_repeating_date = DateTime.now().plus({ hours: 8 }).toISO();
-        next_repeat = 'in 1 day';
         break;
       case 2:
         next_repeating_date = DateTime.now().plus({ hours: 24 }).toISO();
-        next_repeat = 'in 3 days';
         break;
       case 3:
         next_repeating_date = DateTime.now().plus({ days: 3 }).toISO();
-        next_repeat = 'in 10 days';
         break;
       case 4:
         next_repeating_date = DateTime.now().plus({ days: 10 }).toISO();
-        next_repeat = 'in 1 month';
         break;
       case 6:
         next_repeating_date = DateTime.now().plus({ month: 1 }).toISO();
-        next_repeat = 'in 3 month';
         break;
       case 7:
         next_repeating_date = DateTime.now().plus({ month: 3 }).toISO();
-        next_repeat = '';
         break;
     }
     await SetModel.findByIdAndUpdate(set_id, {
