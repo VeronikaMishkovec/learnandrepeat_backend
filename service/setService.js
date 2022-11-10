@@ -43,10 +43,12 @@ class SetService {
       current_learning_stage.learning_stage + 1;
     let next_repeating_date = "";
     let next_repeat = '';
+    let set_status = '';
     switch (current_learning_stage.learning_stage) {
       case 0:
         next_repeating_date = DateTime.now().plus({ minutes: 30 }).toISO();
         next_repeat = 'in 8 hours';
+        set_status = 'in 30 minutes';
         break;
       case 1:
         next_repeating_date = DateTime.now().plus({ hours: 8 }).toISO();
@@ -77,6 +79,7 @@ class SetService {
       learning_stage: learning_stage,
       next_repeating_date: next_repeating_date,
       next_repeat: next_repeat,
+      set_status: set_status
     });
 
     const updatedSet = SetModel.findOne({ set_id });
