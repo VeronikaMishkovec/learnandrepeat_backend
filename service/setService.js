@@ -65,11 +65,11 @@ class SetService {
         next_repeating_date = DateTime.now().plus({ days: 10 }).toISO();
         set_status = 'in 10 days';
         break;
-      case 6:
+      case 5:
         next_repeating_date = DateTime.now().plus({ month: 1 }).toISO();
         set_status = 'in 1 month';
         break;
-      case 7:
+      case 6:
         next_repeating_date = DateTime.now().plus({ month: 3 }).toISO();
         break;
     }
