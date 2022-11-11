@@ -71,6 +71,7 @@ class SetService {
         break;
       case 6:
         next_repeating_date = DateTime.now().plus({ month: 3 }).toISO();
+        set_status = 'in 3 month';
         break;
     }
     await SetModel.findByIdAndUpdate(set_id, {
