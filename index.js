@@ -18,7 +18,7 @@ app.use(express.json());
 app.use("/sets", setsRouter);
 app.use("/auth", AuthRouter);
 app.use("/word", WordRouter);
-app.use("/user", UserRouter);
+// app.use("/user", UserRouter);
 
 
 
