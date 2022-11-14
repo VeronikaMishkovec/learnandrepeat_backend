@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const setsRouter = require("./routes/SetsRouter");
 const AuthRouter = require("./routes/AuthRouter");
 const WordRouter = require("./routes/WordRouter");
-const UserRouter = require("./routes/UserRouter");
+// const UserRouter = require("./routes/UserRouter")
 
 const ErrorMiddleware = require("./middlewares/auth")
 
