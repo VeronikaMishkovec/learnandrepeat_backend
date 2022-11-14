@@ -22,7 +22,7 @@ class AuthService {
     });
     await tokenService.saveToken(user._id, tokens.refreshToken);
 
-    return { ...tokens };
+    return { ...tokens, user_id: user._id };
   }
 
   async login(email, password) {
