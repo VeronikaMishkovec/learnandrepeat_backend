@@ -71,6 +71,11 @@ class AuthService {
 
     return { ...tokens, userId: user._id, email: user.email };
   }
+
+  async getUserInfo(user_id) {
+    const user = await UserModel.findById(user_id);
+    return user
+  }
 }
 
 module.exports = new AuthService();
