@@ -29,6 +29,6 @@ router.post(
 // router.post('/logout', authController.logout) //params: token
 //
 router.post("/refresh", authController.refresh); //params: token
-router.post("/user-info", authController.userInfo)
+// router.post("/user-info", authController.userInfo)
 
 module.exports = router;

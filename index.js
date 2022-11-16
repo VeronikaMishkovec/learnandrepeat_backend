@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const setsRouter = require("./routes/SetsRouter");
 const AuthRouter = require("./routes/AuthRouter");
 const WordRouter = require("./routes/WordRouter");
+const UserRouter = require("./routes/UserRouter")
 
 const ErrorMiddleware = require("./middlewares/auth")
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use("/sets", setsRouter);
 app.use("/auth", AuthRouter);
 app.use("/word", WordRouter);
+app.use("/user", UserRouter);
 
 app.use(ErrorMiddleware);
 
