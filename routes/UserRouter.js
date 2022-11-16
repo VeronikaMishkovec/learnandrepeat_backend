@@ -1,8 +1,8 @@
 const Router = require("express").Router;
-const authController = require("../controllers/AuthController");
+const UserController = require("../controllers/UserController");
 
 const router = new Router();
 
-router.post("/user-info", authController.userInfo)
+router.post("/user-info", UserController.userInfo)
 
 module.exports = router;

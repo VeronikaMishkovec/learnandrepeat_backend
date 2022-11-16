@@ -50,16 +50,16 @@ class AuthController {
     }
   }
 
-  async userInfo(req, res, next) {
-    const { user_id } = req.body;
-    try {
-      const user = await AuthService.getUserInfo(user_id)
-
-      return res.json(user)
-    } catch (e) {
-      next(e)
-    }
-  }
+  // async userInfo(req, res, next) {
+  //   const { user_id } = req.body;
+  //   try {
+  //     const user = await AuthService.getUserInfo(user_id)
+  //
+  //     return res.json(user)
+  //   } catch (e) {
+  //     next(e)
+  //   }
+  // }
 
   // async join(req, res, next) {
   //   const {email, password, code} = req.body
