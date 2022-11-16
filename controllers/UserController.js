@@ -1,10 +1,10 @@
-const AuthService = require("../service/AuthService");
+const UserService = require("../service/UserService");
 
 class UserController {
     async userInfo(req, res, next) {
         const { user_id } = req.body;
         try {
-            const user = await AuthService.getUserInfo(user_id)
+            const user = await UserService.getUserInfo(user_id)
 
             return res.json(user)
         } catch (e) {
