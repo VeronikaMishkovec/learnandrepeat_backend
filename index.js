@@ -20,8 +20,6 @@ app.use("/auth", AuthRouter);
 app.use("/word", WordRouter);
 app.use("/user", UserRouter);
 
-
-
 app.use(ErrorMiddleware);
 
 const start = async () => {
