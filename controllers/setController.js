@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const setService = require("../service/setService");
-const { DateTime } = require("luxon");
+const WordService = require("../service/WordService")
+const WordModel = require("../model/WordModel");
 
 class SetController {
   async createNewSet(req, res, next) {
@@ -45,9 +46,11 @@ class SetController {
   async deleteSet(req, res, next) {
     try {
       const { set_id, user_id, lang } = req.body;
-
+      const wordList = await WordService.getWordsList(set_id)
+      wordList.map(async item => await WordModel.findByIdAndDelete(item._id))
       await setService.deleteSet(set_id);
       const setsList = await setService.getAllSets(user_id, lang);
+
       return res.json(setsList);
     } catch (e) {
       next(e);
