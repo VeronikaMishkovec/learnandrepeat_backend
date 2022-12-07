@@ -23,8 +23,8 @@ class SetController {
 
   async getAllSets(req, res, next) {
     try {
-      const { user_id, lang } = req.body;
-      const setsList = await setService.getAllSets(user_id, lang);
+      const { user_id } = req.body;
+      const setsList = await setService.getAllSets(user_id);
       const sortedList = setsList.sort((a,b) => a.learning_stage > b.learning_stage ? 1 : -1)
       return res.json(sortedList);
     } catch (e) {

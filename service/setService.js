@@ -27,8 +27,8 @@ class SetService {
     return setsList;
   }
 
-  async getAllSets(user_id, lang) {
-    const setsList = SetModel.find({ user_id, lang });
+  async getAllSets(user_id) {
+    const setsList = SetModel.find({ user_id });
     return setsList;
   }
 
