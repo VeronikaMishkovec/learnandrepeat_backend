@@ -4,6 +4,7 @@ const WordSchema = new Schema({
   origin: { type: String, unique: true, required: true },
   translation: { type: String, required: true },
   set_id: { type: String },
+  part_of_speech: { type: String }
 });
 
 module.exports = model("Word", WordSchema);

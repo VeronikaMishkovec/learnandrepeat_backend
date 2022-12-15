@@ -5,12 +5,13 @@ const SetService = require("../service/setService");
 class WordController {
   async createNewWord(req, res, next) {
     try {
-      const { origin, translation, set_id } = req.body;
+      const { origin, translation, set_id, part_of_speech } = req.body;
 
       const newWord = await WordService.createNewWord(
         origin,
         translation,
-        set_id
+        set_id,
+        part_of_speech
       );
       await SetService.updateCurrentWordsNumber(set_id, newWord.length)
       return res.json(newWord);

@@ -3,11 +3,12 @@
 const WordModel = require("../model/WordModel");
 
 class WordService {
-  async createNewWord(origin, translation, set_id) {
+  async createNewWord(origin, translation, set_id, part_of_speech) {
     await WordModel.create({
       origin,
       translation,
       set_id,
+      part_of_speech
     });
 
     const wordList = await WordModel.find({ set_id });
