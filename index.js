@@ -5,7 +5,8 @@ const mongoose = require("mongoose");
 const setsRouter = require("./routes/SetsRouter");
 const AuthRouter = require("./routes/AuthRouter");
 const WordRouter = require("./routes/WordRouter");
-const UserRouter = require("./routes/UserRouter")
+const UserRouter = require("./routes/UserRouter");
+const LangRouter = require("./routes/LangRouter")
 
 const ErrorMiddleware = require("./middlewares/auth")
 
@@ -19,6 +20,7 @@ app.use("/sets", setsRouter);
 app.use("/auth", AuthRouter);
 app.use("/word", WordRouter);
 app.use("/user", UserRouter);
+app.use("/lang", LangRouter);
 
 app.use(ErrorMiddleware);
 
