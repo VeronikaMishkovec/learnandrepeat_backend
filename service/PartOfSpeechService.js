@@ -1,8 +1,8 @@
 const PartOfSpeechModel = require("../model/PartOfSpeechModel");
 
 class PartOfSpeechService {
-  async createPart(name) {
-    const list = await PartOfSpeechModel.create({ name: name });
+  async createPart(name, color) {
+    const list = await PartOfSpeechModel.create({ name: name, color: color });
     return list;
   }
 
