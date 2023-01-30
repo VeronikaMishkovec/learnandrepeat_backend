@@ -4,9 +4,9 @@ const LangService = require("../service/LangService");
 class LangController {
   async createLang(req, res, next) {
     try {
-      const { title, image } = req.body;
+      const { title, image, color, bg_color } = req.body;
 
-      const list = await LangService.createLang(title, image);
+      const list = await LangService.createLang(title, image, color, bg_color);
       return res.json(list);
     } catch (e) {
       next(e);
