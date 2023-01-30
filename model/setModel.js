@@ -3,7 +3,9 @@ const { Schema, model } = require("mongoose");
 
 const SetSchema = new Schema({
   lang: {
-    title: { type: String }},
+    title: { type: String },
+    color: { type: String },
+    bg_color: { type: String }},
   title: { type: String },
   max_num: { type: Number },
   user_id: { type: String },

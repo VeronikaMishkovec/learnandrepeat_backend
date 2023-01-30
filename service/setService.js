@@ -12,7 +12,7 @@ class SetService {
       throw console.log(`Project ${title} is already exist`);
     }
     await SetModel.create({
-      lang: { title: lang },
+      lang: { title: lang.title, color: lang.color, bg_color: lang.bg_color },
       title,
       max_num,
       user_id,
