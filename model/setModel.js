@@ -2,7 +2,8 @@
 const { Schema, model } = require("mongoose");
 
 const SetSchema = new Schema({
-  lang: { type: String },
+  lang: {
+    title: { type: String }},
   title: { type: String },
   max_num: { type: Number },
   user_id: { type: String },
