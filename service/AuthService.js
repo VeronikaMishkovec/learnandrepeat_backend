@@ -14,6 +14,11 @@ class AuthService {
     const user = await UserModel.create({
       email,
       password: hashPassword,
+      first_name: '',
+      second_name: '',
+      learning_languages: [],
+      words_total_number: 0,
+      learn_words_number: 0,
     });
 
     const tokens = tokenService.generateTokens({
